@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Desafio Secreto</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="forca.js" defer></script>
+</head>
+
+<body>
+
+<main class="container">
+
+     <header class="topo">
+         <div class="logo">
+                ✦ DESAFIO SECRETO
+         </div>
+
+         <span class="selo">PROJETO SENAI</span>
+        </header>
+
+        <section class="cartao">
+
+            <div class="cabecalho">
+                <span class="subtitulo">RACIOCÍNIO • DESCOBERTA • DIVERSÃO</span>
+
+                <h1 id="tituloPag">Desafio Secreto</h1>
+
+                <p>Descubra a palavra escondida antes que sua energia acabe!</p>
+            </div>
+
+            <section class="configuracao">
+
+                <h2>Prepare seu desafio</h2>
+
+                <div class="campo">
+                    <label for="segredo">Palavra secreta</label>
+
+                    <input
+                        type="password"
+                        id="segredo"
+                        placeholder="Digite a palavra secreta"
+                        oninput="habilitarBtInicio()"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="categoria">Categoria</label>
+
+                    <input
+                        type="text"
+                        id="categoria"
+                        placeholder="Ex.: Animais, Tecnologia, Objetos"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="dica">Dica para o jogador</label>
+
+                    <input
+                        type="text"
+                        id="dica"
+                        placeholder="Ex.: É conhecido como o rei da selva"
+                    >
+                </div>
+
+                <button
+                    id="btInicia"
+                    onclick="iniciarOJogo()"
+                    disabled
+                >
+                    Começar desafio →
+                </button>
+
+            </section>
+
+            <section class="area-jogo">
+
+                <div class="informacao">
+                    <span>⚡ SUA ENERGIA</span>
+
+                    <span id="contadorErros">15 tentativas restantes</span>
+                </div>
+
+                <div class="energia" id="energia">
+
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+
+                </div>
+
+                <div class="dica-box">
+
+                    <div class="dica-item">
+                        <span class="icone">📚</span>
+
+                        <div>
+                            <small>CATEGORIA</small>
+                            <strong id="categoriaExibida">Aguardando partida</strong>
+                        </div>
+                    </div>
+
+                    <div class="dica-item">
+                        <span class="icone">💡</span>
+
+                        <div>
+                            <small>DICA SECRETA</small>
+                            <strong id="dicaExibida">A dica aparecerá aqui</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="palavra-box">
+
+                    <span class="identificacao">DESCUBRA A PALAVRA</span>
+
+                    <div id="painel">
+                        _ _ _ _ _ _
+                    </div>
+
+                </div>
+
+                <div class="erros-box">
+
+                    <span>LETRAS JÁ ERRADAS</span>
+
+                    <div id="erradas">
+                        Nenhuma até agora
+                    </div>
+
+                </div>
+
+                <div class="tentativa-box">
+
+                    <label for="tentativa">Escolha uma letra:</label>
+
+                    <div class="linha-input">
+
+                        <input
+                            type="text"
+                            id="tentativa"
+                            placeholder="A"
+                            maxlength="1"
+                            disabled
+                        >
+
+                        <button
+                            id="btVerifica"
+                            onclick="verificaLetraDigitada()"
+                            disabled
+                        >
+                            Verificar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <p id="mensagem" class="mensagem">
+                    Comece o desafio para jogar!
+                </p>
+
+                <button
+                    id="reset"
+                    onclick="reiniciaJogo()"
+                    hidden
+                >
+                    ↻ Jogar novamente
+                </button>
+
+            </section>
+
+        </section>
+
+
+        <footer>
+            <p>DESAFIO SECRETO • Desenvolvido para o <strong>SENAI</strong></p>
+        </footer>
+
+    </main>
+        <script src="forca.js"></script>
+</body>
+</html>

@@ -1,0 +1,510 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: 'DM Sans', sans-serif;
+
+    background:
+        radial-gradient(circle at top left, #263f70, transparent 40%),
+        linear-gradient(135deg, #080f1d, #15233d, #171632);
+
+    color: white;
+
+    padding: 30px 15px;
+}
+
+.container {
+    width: 100%;
+    max-width: 760px;
+    margin: auto;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+.logo {
+    color: #dceaff;
+
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 14px;
+}
+
+.selo {
+    border: 1px solid #40577a;
+
+    color: #9fc5ff;
+
+    padding: 8px 13px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.cartao {
+    background: linear-gradient(145deg, #1b2d49, #101c30);
+
+    border: 1px solid #304765;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.cabecalho {
+    padding: 35px 30px;
+
+    border-bottom: 1px solid #30425b;
+}
+
+.subtitulo {
+    color: #79b7ff;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+
+    font-size: 35px;
+
+    margin: 12px 0;
+}
+
+.cabecalho p {
+    color: #a5b9d2;
+    font-size: 14px;
+}
+
+.configuracao {
+    padding: 25px 30px;
+
+    background: rgba(0, 0, 0, 0.13);
+}
+
+.configuracao h2 {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+
+    color: #dce9fa;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    margin-bottom: 9px;
+}
+
+input {
+    width: 100%;
+
+    padding: 14px;
+
+    background: #0d192a;
+
+    border: 1px solid #405a7b;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    color: white;
+
+    font-size: 14px;
+
+    transition: .3s;
+}
+
+input:focus {
+    border-color: #65aaff;
+
+    box-shadow: 0 0 10px rgba(101, 170, 255, .2);
+}
+
+input::placeholder {
+    color: #7286a1;
+}
+
+button {
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 14px 18px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+#btInicia {
+    width: 100%;
+
+    margin-top: 8px;
+
+    color: white;
+
+    background: linear-gradient(135deg, #579eff, #6554df);
+}
+
+#btInicia:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 18px #438ef055;
+}
+
+.area-jogo {
+    padding: 30px;
+}
+
+.informacao {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+    color: #9fc7f5;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+#contadorErros {
+    color: #f4d17a;
+
+    font-size: 12px;
+
+    letter-spacing: 0;
+}
+
+.energia {
+    display: grid;
+
+    grid-template-columns: repeat(15, 1fr);
+
+    gap: 6px;
+
+    margin-bottom: 25px;
+}
+
+.barra {
+    height: 17px;
+
+    border-radius: 5px;
+
+    background: #40d6a1;
+
+    box-shadow: 0 0 7px rgba(64, 214, 161, .2);
+
+    transition: .3s;
+}
+
+.barra.perdida {
+    background: #35445a;
+
+    box-shadow: none;
+
+    opacity: .45;
+}
+
+.dica-box {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.dica-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px;
+
+    background: rgba(83, 144, 226, .10);
+
+    border: 1px solid rgba(83, 144, 226, .2);
+
+    border-radius: 12px;
+
+    min-width: 0;
+}
+
+.icone {
+    font-size: 23px;
+}
+
+.dica-item small {
+    display: block;
+
+    color: #80b8ff;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    font-weight: bold;
+
+    margin-bottom: 6px;
+}
+
+.dica-item strong {
+    display: block;
+
+    color: #e3edfb;
+
+    font-size: 12px;
+
+    overflow-wrap: anywhere;
+}
+
+.palavra-box {
+    background: #0c192b;
+
+    border: 1px solid #304968;
+
+    border-radius: 15px;
+
+    padding: 27px 15px;
+
+    text-align: center;
+
+    margin-bottom: 22px;
+}
+
+.identificacao {
+    display: block;
+
+    color: #85addb;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+#painel {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+
+    min-height: 38px;
+
+    color: white;
+
+    font-size: 26px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+}
+
+
+.erros-box {
+    padding: 17px;
+
+    background: rgba(255, 113, 133, .07);
+
+    border: 1px solid rgba(255, 113, 133, .2);
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+}
+
+.erros-box span {
+    color: #f4a1ad;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+#erradas {
+    margin-top: 10px;
+
+    color: #ff8193;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.tentativa-box {
+    margin-top: 15px;
+}
+
+.linha-input {
+    display: flex;
+
+    gap: 10px;
+}
+
+#tentativa {
+    text-align: center;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    text-transform: uppercase;
+}
+
+#btVerifica {
+    color: white;
+
+    background: linear-gradient(135deg, #579eff, #6554df);
+
+    white-space: nowrap;
+}
+
+#btVerifica:hover:not(:disabled) {
+    transform: translateY(-2px);
+}
+
+
+.mensagem {
+    min-height: 25px;
+
+    margin-top: 20px;
+
+    text-align: center;
+
+    color: #a9c2e1;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+#reset {
+    width: 100%;
+
+    margin-top: 15px;
+
+    color: white;
+
+    background: linear-gradient(135deg, #20bb8b, #128466);
+}
+
+#reset:hover {
+    transform: translateY(-2px);
+}
+
+#reset[hidden] {
+    display: none;
+}
+
+footer {
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #879bb5;
+
+    font-size: 12px;
+}
+
+footer strong {
+    color: #79b7ff;
+
+    letter-spacing: 1px;
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px 10px;
+    }
+
+    .cabecalho,
+    .configuracao,
+    .area-jogo {
+        padding: 22px 18px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .dica-box {
+        grid-template-columns: 1fr;
+    }
+
+    .linha-input {
+        flex-direction: column;
+    }
+
+    #btVerifica {
+        width: 100%;
+    }
+
+    .energia {
+        gap: 4px;
+    }
+
+    .barra {
+        height: 13px;
+    }
+
+    #painel {
+        font-size: 21px;
+        gap: 5px;
+    }
+
+}
